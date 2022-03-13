@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>To do List</h1>
+    <div class="container">
+        <form action="#">
+            <input type="text" id="text_value" aria-label="text">
+            <button type="button" onclick="add()">Add</button>
+        </form>
+        <ul id="todo">
+
+        </ul>
+        <style>
+            .done {
+                text-decoration: line-through;
+            }
+        </style>
+    </div>
+
+    <script>
+        const todo = document.getElementById('todo');
+
+        function add() { 
+            
+            // 1. ambil nilai dari textnya
+            let newText = document.getElementById('text_value')
+            // 2. ambil nilai dari ul
+            let newTodo = `<li> <input type='checkbox' onclick='toggle(this)'> ${newText.value} <button onclick='removeItem(this)'> Hapus </button> 
+                </li> <br>`;
+            todo.insertAdjacentHTML('afterbegin', newTodo)
+            newText.value = ''
+        }
+        function toggle(el){
+            let isChecked = el.checked
+            if(isChecked){
+                el.parentElement.classList.add('done')
+            }
+            else{
+                el.parentElement.classList.remove('done')
+            }
+        }
+        function removeItem(el){
+            el.parentElement.remove()
+        }
+        
+    </script>
+</body>
+
+</html>
