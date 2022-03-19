@@ -44,12 +44,17 @@
                 el.parentElement.classList.add('done')
             }
             else{
-                alert("Are You Sure");
                 el.parentElement.classList.remove('done')
             }
         }
         function removeItem(el){
-            el.parentElement.remove()
+            let conf = confirm("Are You Sure ?");
+            if (conf == true){
+                el.parentElement.remove()
+            }
+            else{
+                return false
+            }
         }
         
     </script>
