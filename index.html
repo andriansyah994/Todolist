@@ -40,7 +40,11 @@
         }
         function toggle(el){
             let isChecked = el.checked
-            (isChecked) ? el.parentElement.classList.add('done') : el.parentElement.classList.remove('done');
+            if(isChecked) { 
+                el.parentElement.classList.add('done')
+            } else {
+                el.parentElement.classList.remove('done');
+            }
             }
         
         function removeItem(el){
