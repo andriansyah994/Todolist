@@ -40,22 +40,13 @@
         }
         function toggle(el){
             let isChecked = el.checked
-            if(isChecked){
-                el.parentElement.classList.add('done')
+            (isChecked) ? el.parentElement.classList.add('done') : el.parentElement.classList.remove('done');
             }
-            else{
-                el.parentElement.classList.remove('done')
-            }
-        }
+        
         function removeItem(el){
-            let conf = confirm("Are You Sure ?");
-            if (conf == true){
-                el.parentElement.remove()
-            }
-            else{
-                return false
-            }
-        }
+            let conf = confirm(`Are you sure remove list`);
+            (conf == true) ? el.parentElement.remove() : false;
+            }     
         
     </script>
 </body>
